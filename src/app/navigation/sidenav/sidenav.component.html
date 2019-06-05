@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation" mode="push" ><div class="Menu" fxLayoutAlign="center center">Template</div>
+    <mat-nav-list fxLayout="column" class="fs">
+     <p ></p>
+      <a mat-list-item routerLink="/signup" (click)="sidenav.close()">Signup<mat-icon fxFlex fxLayoutAlign="flex-end">arrow_right</mat-icon></a>
+      <a mat-list-item routerLink="/uidparent" (click)="sidenav.close()">Uid parent/child<mat-icon fxFlex fxLayoutAlign="flex-end">arrow_right</mat-icon></a>
+      <a mat-list-item routerLink="/uidevent" (click)="sidenav.close()">Uid Event<mat-icon fxFlex fxLayoutAlign="flex-end">arrow_right</mat-icon></a>
+      <a mat-list-item routerLink="/uidlocation" (click)="sidenav.close()">Uid Location<mat-icon fxFlex fxLayoutAlign="flex-end">arrow_right</mat-icon></a>
+    </mat-nav-list>
+  </mat-sidenav>
+ 
+  <mat-sidenav-content>
+      <app-header (onToggleSideNav)="sidenav.toggle()"></app-header>
+       <main>  
+        <router-outlet></router-outlet>
+      </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

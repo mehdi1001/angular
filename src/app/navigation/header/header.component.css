@@ -1,0 +1,48 @@
+mat-sidenav-container, mat-sidenav-content,mat-sidenav {
+    height: 100%;
+}
+mat-sidenav{
+    width: 250px;
+    background-color: blue;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover,
+a:active{
+    color: lightgray;
+}
+.links{
+    font-family: Josefin Sans;
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+.image{
+    height: 50px;
+    width: 200px; 
+}
+.Menu{
+        
+    font-family: Josefin Sans;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 250;
+    height: 65px;
+    background-color:#673AB7;
+}
+.p{
+    margin: 25px 50px 75px 15px;
+}
+.fs {
+    
+    font-family: Josefin Sans;
+    font-size: 15px;
+    width: 250;
+    height: 91%;
+    background-color: white;
+  /*   box-shadow: 10px 10px 50px 10px grey inset; */
+}
