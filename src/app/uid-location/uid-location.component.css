@@ -1,6 +1,6 @@
 .card{
     display: flex;
-    width: 800px;
+    width: 850px;
     height: 500px;
     border-radius: 15px;
     margin-left: 350px;
@@ -10,14 +10,26 @@
 mat-form-field{
     width: 350px;
     justify-content: center;
-       align-items: center;
-   
+       align-items: center; 
+      grid-gap: 10px 20px; 
 }
 button{
     display: flex;
     flex-direction: column;
-    margin-left: 120px;
+    margin-left: 370px;
+    
 }
 placeholder{
     text-align: center;
+}
+ .leftinput{
+    padding-left: 25px;
+
+} 
+.centerinput{
+  /*   display: flex;
+    justify-content: center;
+       align-items: center;  */
+       padding-left: 250px;
+    
 }

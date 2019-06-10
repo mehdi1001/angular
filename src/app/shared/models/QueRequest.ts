@@ -4,4 +4,5 @@ export default class QueRequest{
     MessageTime: Date;
     SenderId: number;
     Code: string;
+  
 }

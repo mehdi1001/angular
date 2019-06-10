@@ -2,26 +2,29 @@
 <div class="message" #alreadySubmitted>
     Message here
 </div> -->
-<section class="card" fxLayout="column" fxLayoutAlign="center center" #theForm>
-<form #location="ngForm" (ngSubmit)="onSubmit(location)" [hidden]="location.valid">
-    <mat-form-field>
-        <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="uidLocation" required>
+<section class="card" fxLayout="column" fxLayoutAlign="center center"  #theForm>
+<form #location="ngForm" (ngSubmit)="onSubmit(location.value)" fxLayoutGap="50px" [hidden]="location.submitted && location.valid">
+    <mat-form-field class="leftinput" >
+        <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="UniqueIdentifierId" required>
     </mat-form-field>
-    <mat-form-field>
-        <input type="text" matInput placeholder="Your Requested MessageType here"  ngModel name="MessageType" required>
+    <mat-form-field class="leftinput" >
+        <input type="text" matInput placeholder="Your Requested MessageType here" ngModel name="MessageType" required>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="leftinput">
         <input type="text" matInput placeholder="Your Requested MessageTime here"  ngModel name="MessageTime" required>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="leftinput">
         <input type="text" matInput placeholder="Your Requested SenderId here"  ngModel name="SenderId" required>
      </mat-form-field>
-     <mat-form-field>
+     <mat-form-field class="centerinput">
         <input type="text" matInput placeholder="Your Requested Code here"  ngModel name="Code" required>
      </mat-form-field>
-   
+     <mat-form-field class="centerinput">
+        <input type="text" matInput placeholder="Your Requested TOKEN here"  ngModel name="Token" required>
+     </mat-form-field>
     <button  type="submit" mat-raised-button color="accent" >Submit</button>
 </form>
 </section>
+
 
 
