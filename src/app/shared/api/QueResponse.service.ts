@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import QueResponse from '../models/QueResponse';
 import QueRequest from '../models/QueRequest';
 import { HttpHeaders } from '@angular/common/http';
 
-
+export interface credentiels{
+UserName: string;
+Password: string;
+grant_type: string;
+}
 @Injectable()
 export default class QueResponseService {
   public API = 'http://localhost:2551';
   public QUEREPONSE_API = `${this.API}/Que`;
+  public TOKEN_API = `${this.API}/Token`;
   
-  /* const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
-    })
-  }; */
 
   constructor(private http: HttpClient) {}
 
@@ -59,4 +58,27 @@ export default class QueResponseService {
     }
     return result;
   } */
+  
+  getToken(credentiels: credentiels){
+    /*const httpOptions: { headers; observe; } = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/x-www-form-urlencoded',
+         'Username': credentiels.Username,
+        'Password': credentiels.Password 
+      }),
+      observe: 'response'
+    };
+   return this.http.post(`${this.TOKEN_API}`,credentiels, httpOptions);*/
+  /*  const httpOptions: { headers; observe; } = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/x-www-form-urlencoded',
+    }),
+    observe: 'response'
+  }; */
+   const payload = new HttpParams()
+    .set('UserName',credentiels.UserName)
+    .set('Password',credentiels.Password)
+    .set('grant_type',credentiels.grant_type);
+   return this.http.post(`${this.TOKEN_API}`,payload);
+  }
 }

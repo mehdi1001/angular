@@ -27,4 +27,5 @@ onSubmit(location){
    this.QueResponseService.get(this.jsonparse,location.Token).subscribe(response => {console.log(response)})
   
 }
+
 }

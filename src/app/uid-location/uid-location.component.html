@@ -2,8 +2,9 @@
 <div class="message" #alreadySubmitted>
     Message here
 </div> -->
-<section class="card" fxLayout="column" fxLayoutAlign="center center"  #theForm>
-<form #location="ngForm" (ngSubmit)="onSubmit(location.value)" fxLayoutGap="50px" [hidden]="location.submitted && location.valid">
+<section class="card" fxLayout="column" fxLayoutAlign="center center"  >
+<form #location="ngForm" (ngSubmit)="onSubmit(location.value)" fxLayoutGap="50px" #theForm>
+   
     <mat-form-field class="leftinput" >
         <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="UniqueIdentifierId" required>
     </mat-form-field>
@@ -25,6 +26,4 @@
     <button  type="submit" mat-raised-button color="accent" >Submit</button>
 </form>
 </section>
-
-
 
