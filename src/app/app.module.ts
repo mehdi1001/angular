@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import QueResponseService from './shared/api/QueResponse.service';
 import { HttpClientModule } from '@angular/common/http';
+import { GuidComponent } from './guid/guid.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     UidLocationComponent,
     UidParentComponent,
     UidEventComponent,
-    DashboardComponent
+    DashboardComponent,
+    GuidComponent
   ],
   imports: [
     BrowserModule,

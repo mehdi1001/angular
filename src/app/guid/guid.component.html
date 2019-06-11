@@ -1,0 +1,12 @@
+<div class="section">
+<form #obj="ngForm" (ngSubmit)="GetGuid(obj.value)" fxLayout="column" fxLayoutAlign="center center" >
+    <mat-form-field>
+  <input matInput type="text" placeholder="Number of Guids Desired" ngModel name="counter" required>
+    </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Generate Guids</button>
+  <mat-form-field >
+      <textarea matInput placeholder="Your Generated Guids Here" [value]="guids" readonly></textarea>
+    </mat-form-field>
+</form>
+
+</div>

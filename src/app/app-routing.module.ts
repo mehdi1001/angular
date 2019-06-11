@@ -6,9 +6,11 @@ import { UidParentComponent } from './uid-parent/uid-parent.component';
 import { AppComponent } from './app.component';
 import { UidLocationComponent } from './uid-location/uid-location.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { GuidComponent } from './guid/guid.component';
  
 const routes: Routes = [
    {path: 'dashboard', component: DashboardComponent},
+   {path: 'guid', component: GuidComponent},
    {path: 'signup', component: SignupComponent},
    {path: 'uidparent', component: UidParentComponent},
    {path: 'uidevent', component: UidEventComponent},

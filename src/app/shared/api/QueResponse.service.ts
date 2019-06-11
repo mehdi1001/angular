@@ -15,6 +15,7 @@ export default class QueResponseService {
   public API = 'http://localhost:2551';
   public QUEREPONSE_API = `${this.API}/Que`;
   public TOKEN_API = `${this.API}/Token`;
+  public GUID_API = `${this.API}/Guid`;
   
 
   constructor(private http: HttpClient) {}
@@ -80,5 +81,9 @@ export default class QueResponseService {
     .set('Password',credentiels.Password)
     .set('grant_type',credentiels.grant_type);
    return this.http.post(`${this.TOKEN_API}`,payload);
+  }
+  GetGuids(counter: number){
+
+    return this.http.get(`${this.GUID_API}?counter=${counter}`);
   }
 }
