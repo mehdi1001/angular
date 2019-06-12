@@ -1,0 +1,17 @@
+.signup-form {
+    display : flex;
+    width : 400px;
+    height : 500px;
+    justify-content : center;
+    align-items : center;
+    margin-left : 550px;
+    margin-top:  30px;
+    margin-top : 80px;
+    box-shadow: 0 0 25px black;
+}
+
+mat-form-field{
+    width:300px;
+    justify-content: center;
+    align-content: center;
+}

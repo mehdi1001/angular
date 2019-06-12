@@ -1,3 +1,38 @@
-<p>
-  uid-parent works!
-</p>
+<section class="signup-form">
+
+  <form #myForm="ngForm" fxLayout="column" fxLayoutAlign="center" (ngSubmit)="Search(myForm.value)">
+    <h2>UID Parent & Child Finder</h2>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Enter UID Here" ngModel name="UniqueIdentifierId" required>
+      <mat-error>UID invalid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input type="text" matInput placeholder="Enter your Token Here" ngModel name="Token" required>
+        <mat-error>Invalid Token</mat-error>
+      </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Find</button>
+
+    <mat-form-field>
+      <textarea matInput
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5"
+      rows="3"
+       placeholder="Parent" [value]="Parent()" readonly></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      rows="3"
+      placeholder="Children" [value]="Children()" readonly></textarea>
+    </mat-form-field>
+
+  </form>
+
+</section>
