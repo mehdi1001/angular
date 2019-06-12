@@ -1,11 +1,15 @@
 .card{
     display: flex;
     width: 850px;
-    height: 500px;
+    height: 100%;
     border-radius: 15px;
     margin-left: 350px;
-    margin-top: 80px;
+    margin-top: 40px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+form{
+    margin-top: 40px;
+    margin-bottom: 25px;
 }
 mat-form-field{
     width: 350px;
@@ -32,4 +36,28 @@ placeholder{
        align-items: center;  */
        padding-left: 250px;
     
+}
+.list{
+    width: 600px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    column-gap: 20px;
+    border-spacing: length;
+    text-align: center;
+   
+}
+.write{
+    display: flex;
+    text-align: center;
+    /* padding: 0 80px; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.link{
+    color: darkgrey;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
 }
