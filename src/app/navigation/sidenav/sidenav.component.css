@@ -18,7 +18,7 @@ a:active{
 }
 img{
     height: 50px;
-    width: 50px;
+    width: 200px;
 }
 .image{
     height: 50px;
@@ -27,7 +27,7 @@ img{
 .Menu{
         
     font-family: Josefin Sans;
-    filter: blur(1px);
+   /*  filter: blur(1px); */
     font-size: 35px;
     color: white;
     text-align: center;
