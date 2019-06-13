@@ -60,4 +60,77 @@ placeholder{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     font-size: 40px;
+}   
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+.loading-bar{
+    width: 500px;
+    height: 50px;
+    border: 1px solid rgb(23, 119, 151);
+    margin: auto;
+}
+
+.loading-bar-element{
+ width: 0;
+ height: 50px;
+ background-color: rgb(79, 92, 206); 
+ animation: loading 2s ease-out infinite;
+}
+
+@keyframes loading {
+    0% {
+      background-color : red;
+        width : 0%;
+    }
+    100% {
+      background-color : rgb(79, 92, 206);
+        width : 100%;
+    }
+}
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+ul {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -150px;
+}
+
+li {
+  position: relative;
+  display: block;
+  border: 1px solid hotpink;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-0%);
+}
 }
