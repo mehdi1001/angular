@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatListModule, MatProgressBarModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatListModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTreeModule} from '@angular/material/tree';
 
@@ -12,7 +12,8 @@ import {MatTreeModule} from '@angular/material/tree';
                MatToolbarModule,
                MatListModule,
                MatTreeModule,
-               MatProgressBarModule
+               MatProgressBarModule,
+               MatProgressSpinnerModule
           ],
      exports: [MatButtonModule,
                MatIconModule,
@@ -22,7 +23,8 @@ import {MatTreeModule} from '@angular/material/tree';
                MatToolbarModule,
                MatListModule,
                MatTreeModule,
-               MatProgressBarModule
+               MatProgressBarModule,
+               MatProgressSpinnerModule
           ]
 
 })

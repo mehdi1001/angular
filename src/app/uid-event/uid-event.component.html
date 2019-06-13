@@ -26,11 +26,13 @@
       <button  type="submit" mat-raised-button color="primary" >Submit</button>
   </form>
   <div class="link"><h1>List of Events</h1></div>
- <!--  <div class="list"></div> -->
+
  <div class="loading-bar"  *ngIf="ShowLoading">
     <div class="loading-bar-element"></div>
-  </div>      
+  </div>     
+
  <!-- <mat-progress-bar mode="indeterminate"  *ngIf="ShowLoading"></mat-progress-bar> -->
+<!--  <mat-spinner *ngIf="ShowLoading"></mat-spinner> -->
 
 <mat-list fxLayout="column" >
     <div *ngFor="let data of Datas" >  

@@ -40,7 +40,7 @@ setInterval(() => {
      this.QueResponseService.get(this.jsonparse,location.Token).subscribe(response => {console.log(response["Events"])
     this.Datas = response["Events"];
     
-    }); } , 2000);
+    }); } , 2000);  
   
   //   console.log(this.Datas);
     // console.log(response);
