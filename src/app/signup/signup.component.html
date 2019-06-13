@@ -1,7 +1,7 @@
 <section class="signup-form" >
   
         <form #credentiels="ngForm" fxLayout="column" fxLayoutAlign="center center"  (ngSubmit)="Generate(credentiels.value)">
-            <h2>Access Token Generator</h2>
+            <h2 class="link">Access Token Generator</h2>
           <mat-form-field>
           <input type="text" matInput placeholder="Your Username Here" ngModel name="UserName" required>
         <mat-error>Username is invalid</mat-error>  

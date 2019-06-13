@@ -1,0 +1,136 @@
+.card{
+    display: flex;
+    width: 850px;
+    height: 100%;
+    border-radius: 15px;
+    margin-left: 350px;
+    margin-top: 40px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+form{
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+mat-form-field{
+    width: 350px;
+    justify-content: center;
+       align-items: center; 
+      grid-gap: 10px 20px; 
+}
+button{
+    display: flex;
+    flex-direction: column;
+    margin-left: 370px;
+    
+}
+placeholder{
+    text-align: center;
+}
+ .leftinput{
+    padding-left: 25px;
+
+} 
+.centerinput{
+  /*   display: flex;
+    justify-content: center;
+       align-items: center;  */
+       padding-left: 250px;
+    
+}
+.list{
+    width: 600px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    column-gap: 20px;
+    border-spacing: length;
+    text-align: center;
+   
+}
+.write{
+    display: flex;
+    text-align: center;
+    /* padding: 0 80px; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.link{
+    color: darkgrey;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}   
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+.loading-bar{
+    width: 500px;
+    height: 50px;
+    border: 1px solid rgb(23, 119, 151);
+    margin: auto;
+}
+
+.loading-bar-element{
+ width: 0;
+ height: 50px;
+ background-color: rgb(79, 92, 206); 
+ animation: loading 2s ease-out infinite;
+}
+
+@keyframes loading {
+    0% {
+      background-color : red;
+        width : 0%;
+    }
+    100% {
+      background-color : rgb(79, 92, 206);
+        width : 100%;
+    }
+}
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+ul {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -150px;
+}
+
+li {
+  position: relative;
+  display: block;
+  border: 1px solid hotpink;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-0%);
+}
+}

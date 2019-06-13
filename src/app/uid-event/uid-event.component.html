@@ -1,3 +1,44 @@
-<p>
-  uid-event works!
-</p>
+<!-- <ng-template *ngIf="formSubmit; then alreadySubmitted else theForm"></ng-template>
+<div class="message" #alreadySubmitted>
+    Message here
+</div> -->
+<section class="card" fxLayout="column" fxLayoutAlign="center center"  >
+  <form #uidparent="ngForm" (ngSubmit)="onSubmit(uidparent.value)" fxLayoutGap="50px" #theForm>
+     
+      <mat-form-field class="leftinput" >
+          <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="UniqueIdentifierId" required>
+      </mat-form-field>
+      <mat-form-field class="leftinput" >
+          <input type="text" matInput placeholder="Your Requested MessageType here" ngModel name="MessageType" >
+      </mat-form-field>
+      <mat-form-field class="leftinput">
+          <input type="text" matInput placeholder="Your Requested MessageTime here"  ngModel name="MessageTime" >
+      </mat-form-field>
+      <mat-form-field class="leftinput">
+          <input type="text" matInput placeholder="Your Requested SenderId here"  ngModel name="SenderId" >
+       </mat-form-field>
+       <mat-form-field class="centerinput">
+          <input type="text" matInput placeholder="Your Requested Code here"  ngModel name="Code" required>
+       </mat-form-field>
+       <mat-form-field class="centerinput">
+          <input type="text" matInput placeholder="Your Requested TOKEN here"  ngModel name="Token" required>
+       </mat-form-field>
+      <button  type="submit" mat-raised-button color="primary" >Submit</button>
+  </form>
+  <div class="link"><h1>List of Events</h1></div>
+ <!--  <div class="list"></div> -->
+ <div class="loading-bar"  *ngIf="ShowLoading">
+    <div class="loading-bar-element"></div>
+  </div>      
+ <!-- <mat-progress-bar mode="indeterminate"  *ngIf="ShowLoading"></mat-progress-bar> -->
+
+<mat-list fxLayout="column" >
+    <div *ngFor="let data of Datas" >  
+        
+            <mat-list-item class="list" > <div class="write"> <mat-icon color="black" >event_note </mat-icon>  {{ data }} </div> </mat-list-item>   
+       <br>
+      </div>
+ </mat-list>
+  </section>
+  
+  
