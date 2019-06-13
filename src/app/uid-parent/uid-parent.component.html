@@ -15,24 +15,17 @@
 
     <button type="submit" mat-raised-button color="primary">Find</button>
 
-    <mat-form-field>
-      <textarea matInput
-      cdkTextareaAutosize
-      #autosize="cdkTextareaAutosize"
-      cdkAutosizeMinRows="1"
-      cdkAutosizeMaxRows="5"
-      rows="3"
-       placeholder="Parent" [value]="Parent()" readonly></textarea>
-    </mat-form-field>
+    <button type="button" mat-button [matMenuTriggerFor]="parentMenu">Parent</button>
+    <mat-menu #parentMenu="matMenu">
+      <button mat-menu-item>{{this.parent}}</button>
+    </mat-menu>
 
-    <mat-form-field>
-      <textarea matInput
-      cdkTextareaAutosize
-      #autosize="cdkTextareaAutosize"
-      rows="3"
-      placeholder="Children" [value]="Children()" readonly></textarea>
-    </mat-form-field>
+    <button type="button" mat-button [matMenuTriggerFor]="ChildMenu">Children</button> 
+    <mat-menu #ChildMenu="matMenu">     
+        <div *ngFor="let d of this.childList">
+                <button mat-menu-item>{{d}}</button>
+          </div>
+    </mat-menu>
 
   </form>
-
 </section>
