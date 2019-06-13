@@ -15,30 +15,7 @@
    
     <button type="submit" mat-raised-button color="primary">Find</button>
     
-    <mat-form-field>
-      <textarea matInput
-      cdkTextareaAutosize
-      #autosize="cdkTextareaAutosize"
-      cdkAutosizeMinRows="1"
-      cdkAutosizeMaxRows="5"
-      rows="3"
-       placeholder="Parent" [value]="Parent()" readonly></textarea>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput
-      cdkTextareaAutosize
-      #autosize="cdkTextareaAutosize"
-      rows="3"
-      placeholder="Children" [value]="Children()" readonly></textarea>
-    </mat-form-field>
-    
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 1</button>
-    </mat-menu>
-
+  
   </form>
 
 </section>
