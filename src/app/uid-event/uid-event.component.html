@@ -24,7 +24,9 @@
           <input type="text" matInput placeholder="Your Requested TOKEN here"  ngModel name="Token" required>
        </mat-form-field>
       <button  type="submit" mat-raised-button color="primary" >Submit</button>
+     
   </form>
+ 
   <div class="link"><h1>List of Events</h1></div>
 
  <div class="loading-bar"  *ngIf="ShowLoading">
@@ -35,12 +37,17 @@
 <!--  <mat-spinner *ngIf="ShowLoading"></mat-spinner> -->
 
 <mat-list fxLayout="column" >
+    
     <div *ngFor="let data of Datas" >  
-        
+           
+            
             <mat-list-item class="list" > <div class="write"> <mat-icon color="black" >event_note </mat-icon>  {{ data }} </div> </mat-list-item>   
        <br>
+       
+
       </div>
  </mat-list>
+ 
   </section>
   
   

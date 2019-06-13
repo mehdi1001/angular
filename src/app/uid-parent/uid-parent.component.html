@@ -12,9 +12,9 @@
         <input type="text" matInput placeholder="Enter your Token Here" ngModel name="Token" required>
         <mat-error>Invalid Token</mat-error>
       </mat-form-field>
-
+   
     <button type="submit" mat-raised-button color="primary">Find</button>
-
+    
     <mat-form-field>
       <textarea matInput
       cdkTextareaAutosize
@@ -32,6 +32,12 @@
       rows="3"
       placeholder="Children" [value]="Children()" readonly></textarea>
     </mat-form-field>
+    
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 1</button>
+    </mat-menu>
 
   </form>
 

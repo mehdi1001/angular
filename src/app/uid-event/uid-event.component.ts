@@ -14,21 +14,16 @@ export class UidEventComponent implements OnInit {
   Datas: string[];
   ShowLoading: boolean = false;
   temoin: any = false;
+  intervalid:any;
   constructor(http: HttpClient,private QueResponseService: QueResponseService) { }
 
   ngOnInit() {
   }
   onSubmit(location){
     
-    /* setTimeout(() => {
-      this.ShowLoading = true;
-      console.log("Timeout" +this.ShowLoading);
-      this.temoin = true;
-      console.log("temoin " +this.temoin);
-  }, 500);
-  console.log("hors SetTimeOut " +this.temoin); */
+    
   this.ShowLoading = true;
-setInterval(() => {
+  this.intervalid=setInterval(() => {
   console.log(this.ShowLoading);
   this.ShowLoading = false;
   console.log("after affectation" + this.ShowLoading);
@@ -37,12 +32,11 @@ setInterval(() => {
      this.jsonparse = JSON.stringify(location);
    
     
-     this.QueResponseService.get(this.jsonparse,location.Token).subscribe(response => {console.log(response["Events"])
+    this.QueResponseService.get(this.jsonparse,location.Token).subscribe(response => {console.log(response["Events"])
     this.Datas = response["Events"];
-    
+    clearInterval(this.intervalid);
     }); } , 2000);  
-  
-  //   console.log(this.Datas);
-    // console.log(response);
+    
+   
    }
 }
