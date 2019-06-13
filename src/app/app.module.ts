@@ -1,3 +1,4 @@
+import { MatMenuModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -38,6 +39,7 @@ import { GuidComponent } from './guid/guid.component';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    MatMenuModule
     //HttpClient
   ],
   providers: [QueResponseService],

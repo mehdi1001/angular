@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-uid-parent',
@@ -21,7 +20,6 @@ export class UidParentComponent implements OnInit {
       myForm.MessageTime="2019-06-10T14:23:52.960Z";
       myForm.SenderId=8; // Set this to your desired one if the back-end checks this.
       myForm.Code= new Date().toLocaleDateString().toString();
-      myForm
       const httpOptions = {
         headers : new HttpHeaders({
           'Content-type' : 'application/json',
@@ -33,23 +31,11 @@ export class UidParentComponent implements OnInit {
       myForm = JSON.stringify(myForm);
       this.http.get(`http://localhost:2551/Que?json=${myForm}`,httpOptions).subscribe(Response => {
          this.childList = Response["Children"];
+         if(this.childList == null || this.childList.length == 0)this.childList = ["No Children"] ;
+         console.log([] +" "+ this.childList);
          this.parent = Response["ParentId"];
+         if(this.parent == null || this.parent == "")this.parent="No Parent!";
          console.log(Response);
       });
-  }
-
-  Parent(){
-    if(this.parent == null)return "This UID has no parent !";
-    return this.parent;
-  }
-
-  Children(){
-    if(this.childList == null || this.childList.length == 0) return "This UID has no children !";
-    var x: string = "";
-    for(var i=0;i<this.childList.length;i++){
-        x += this.childList[i]+"\n";
-    }
-    console.log(x);
-    return x;
   }
 }
