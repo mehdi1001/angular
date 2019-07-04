@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   action: string = 'Dismiss';
   checker: boolean;
   handlers: string;
+  errors:any;
    tab: any  = {access_token: null,expires_in: null,token_type: null};
   constructor(private QueResponseService: QueResponseService,private _snackBar: MatSnackBar) { }
 
@@ -35,9 +36,11 @@ Generate(credentiels){
   if(JSON.stringify(data["access_token"]) != null)
   {this.checker = true;}
   console.log(this.checker);
-  }),(error) =>{ this.handlers ="Access Token Generation Failed.Invalid username or password";
-  console.log(this.handlers);
-}
+  },(error) =>{ this.errors = error["statusText"];
+  console.log("this is the errors"+this.errors);
+  this.handlers ="Access Token Generation Failed.<br> Invalid username or password";
+console.log(" this is a handler"+this.handlers);
+})
 }
 
 }
