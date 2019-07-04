@@ -6,7 +6,7 @@
   <form #uidparent="ngForm" (ngSubmit)="onSubmit(uidparent.value)" fxLayoutGap="50px" #theForm>
      
       <mat-form-field class="leftinput" >
-          <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="UniqueIdentifierId" required>
+          <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="UniqueIdentifierId" >
       </mat-form-field>
       <mat-form-field class="leftinput" >
           <input type="text" matInput placeholder="Your Requested MessageType here" ngModel name="MessageType" >
@@ -18,36 +18,59 @@
           <input type="text" matInput placeholder="Your Requested SenderId here"  ngModel name="SenderId" >
        </mat-form-field>
        <mat-form-field class="centerinput">
-          <input type="text" matInput placeholder="Your Requested Code here"  ngModel name="Code" required>
+          <input type="text" matInput placeholder="Your Requested Code here"  ngModel name="Code" >
        </mat-form-field>
-       <mat-form-field class="centerinput">
-          <input type="text" matInput placeholder="Your Requested TOKEN here"  ngModel name="Token" required>
-       </mat-form-field>
-      <button  type="submit" mat-raised-button color="primary" >Submit</button>
+      <button  type="submit"  mat-raised-button color="primary" (click)="emptyError()">Submit</button>
      
   </form>
- 
-  <div class="link"><h1>List of Events</h1></div>
+  <div *ngIf="handlers.length > 0" class="written">
+    Errors : <div *ngFor="let error of handlers">
+   {{ error }}<br>
+  </div>
 
+   </div>
+  <div class="link"><h1>List of Events</h1></div>
  <div class="loading-bar"  *ngIf="ShowLoading">
     <div class="loading-bar-element"></div>
   </div>     
 
- <!-- <mat-progress-bar mode="indeterminate"  *ngIf="ShowLoading"></mat-progress-bar> -->
-<!--  <mat-spinner *ngIf="ShowLoading"></mat-spinner> -->
-
-<mat-list fxLayout="column" >
-    
-    <div *ngFor="let data of Datas" >  
-           
-            
-            <mat-list-item class="list" > <div class="write"> <mat-icon color="black" >event_note </mat-icon>  {{ data }} </div> </mat-list-item>   
-       <br>
-       
-
-      </div>
- </mat-list>
  
+ <div class="page" *ngIf="dating">
+  
+  <div class="page__demo">
+    <div class="main-container page__container">
+       
+      <div class="timeline" *ngFor="let data of dating" >
+        
+    
+        <div class="timeline__group"  >
+          
+          <div >  
+          <span class="timeline__year" >{{ data.date }}</span></div>
+          <div class="timeline__box">
+             <div class="timeline__date">
+              <span class="timeline__day">{{ data.type }}</span>
+              <span class="timeline__month"></span>
+            </div> 
+            <div class="timeline__post">
+              <div class="timeline__content">
+                <p> Code : {{ data.ID }} </p>
+                <p> Description : {{ data.content }}  </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+       
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+  
   </section>
   
   

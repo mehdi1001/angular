@@ -1,3 +1,4 @@
+
 .card{
     display: flex;
     width: 850px;
@@ -12,11 +13,13 @@ mat-form-field{
     justify-content: center;
        align-items: center; 
       grid-gap: 10px 20px; 
+    /*   margin-right: 350px; */
+    padding-left: 150px;
 }
 button{
     display: flex;
     flex-direction: column;
-    margin-left: 370px;
+    margin-left: 182px;
     
 }
 placeholder{
@@ -30,6 +33,21 @@ placeholder{
   /*   display: flex;
     justify-content: center;
        align-items: center;  */
-       padding-left: 250px;
+       margin-left: -90px;
     
+}
+.written{
+    font-family: 'Cuprum', sans-serif;
+    font-size: 30px;
+}
+.errors{
+    font-family: 'Cuprum', sans-serif;
+    font-size: 30px;
+    color: red;
+}
+.link{
+    color: dark;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
 }

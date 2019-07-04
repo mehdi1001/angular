@@ -8,19 +8,12 @@
         <mat-error>UID invalid</mat-error>
       </mat-form-field>
   
-      <mat-form-field>
-          <input type="text" matInput placeholder="Enter your Token Here" ngModel name="Token" required>
-          <mat-error>Invalid Token</mat-error>
-        </mat-form-field>
-  
       <button type="submit" mat-raised-button color="primary">Find</button>
   
-      <button type="button" mat-button [matMenuTriggerFor]="parentMenu">Parent</button>
-      <mat-menu #parentMenu="matMenu">
-        <button mat-menu-item>{{this.parent}}</button>
-      </mat-menu>
+      <button type="button" mat-button >Parent: {{this.parent}}</button>
   
-      <button type="button" mat-button [matMenuTriggerFor]="ChildMenu">Children</button> 
+  
+      <button type="button" mat-button [matMenuTriggerFor]="ChildMenu">Children {{ length }}</button> 
       <mat-menu #ChildMenu="matMenu">     
           <div *ngFor="let d of this.childList">
                   <button mat-menu-item>{{d}}</button>

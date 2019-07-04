@@ -16,6 +16,7 @@ export default class QueResponseService {
   public QUEREPONSE_API = `${this.API}/Que`;
   public TOKEN_API = `${this.API}/Token`;
   public GUID_API = `${this.API}/Guid`;
+  public LOCATION_API = `${this.API}/Location`;
   
 
   constructor(private http: HttpClient) {}
@@ -85,5 +86,15 @@ export default class QueResponseService {
   GetGuids(counter: number){
 
     return this.http.get(`${this.GUID_API}?counter=${counter}`);
+  }
+  GetLocation(uid: string,Token :string)
+  { const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': Token
+    })
+  };
+  
+     return this.http.get(`${this.LOCATION_API}?uid=${uid}`, httpOptions);
   }
 }

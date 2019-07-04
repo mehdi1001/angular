@@ -10,6 +10,7 @@ export class UidParentComponent implements OnInit {
   childList : string[];
   parent : string;
   res : any;
+  length: number;
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
@@ -23,7 +24,7 @@ export class UidParentComponent implements OnInit {
       const httpOptions = {
         headers : new HttpHeaders({
           'Content-type' : 'application/json',
-          'Authorization' : myForm.Token
+          'Authorization' : JSON.parse(localStorage.getItem('Access_token'))
         })
       }
       delete myForm.Token;
@@ -31,11 +32,14 @@ export class UidParentComponent implements OnInit {
       myForm = JSON.stringify(myForm);
       this.http.get(`http://localhost:2551/Que?json=${myForm}`,httpOptions).subscribe(Response => {
          this.childList = Response["Children"];
-         if(this.childList == null || this.childList.length == 0)this.childList = ["No Children"] ;
-         console.log([] +" "+ this.childList);
+         if(this.childList == null || this.childList.length == 0){this.childList = ["No Children"] ;
+         this.length = 0;}
+         else 
+         this.length = this.childList.length;
          this.parent = Response["ParentId"];
          if(this.parent == null || this.parent == "")this.parent="No Parent!";
          console.log(Response);
       });
-  }
+
+    }
 }

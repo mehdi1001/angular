@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import QueResponseService from '../shared/api/QueResponse.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 export interface resp {
   access_token: string;
 
@@ -12,22 +13,31 @@ export interface resp {
 export class SignupComponent implements OnInit {
   pass: string = 'password';
   jsonparse: any;
-   tab: any  = {access_token: null};
-  constructor(private QueResponseService: QueResponseService) { }
+  message: string = 'Your Access Token has been generated';
+  action: string = 'Dismiss';
+  checker: boolean;
+  handlers: string;
+   tab: any  = {access_token: null,expires_in: null,token_type: null};
+  constructor(private QueResponseService: QueResponseService,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
-
+  
 Generate(credentiels){
   credentiels.grant_type="password";
  
   this.jsonparse = JSON.stringify(credentiels);
-  console.log(this.jsonparse);
-  this.QueResponseService.getToken(credentiels).subscribe(data => {this.tab = data});
+  this.QueResponseService.getToken(credentiels).subscribe(data => {this.tab = data;
+  localStorage.setItem('Access_token',JSON.stringify(data["access_token"]));
+  {this._snackBar.open(this.message, this.action, {
+    duration: 8000,
+  });}
+  if(JSON.stringify(data["access_token"]) != null)
+  {this.checker = true;}
+  console.log(this.checker);
+  }),(error) =>{ this.handlers ="Access Token Generation Failed.Invalid username or password";
+  console.log(this.handlers);
 }
-onValue(){
-  if(this.tab == "tommy")
-  return this.tab.access_token === null;
-  return this.tab.access_token;
 }
+
 }

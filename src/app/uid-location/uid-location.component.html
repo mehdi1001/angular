@@ -3,27 +3,26 @@
     Message here
 </div> -->
 <section class="card" fxLayout="column" fxLayoutAlign="center center"  >
+        <div class="link"><h1 >UID Location</h1></div>
 <form #location="ngForm" (ngSubmit)="onSubmit(location.value)" fxLayoutGap="50px" #theForm>
    
-    <mat-form-field class="leftinput" >
+   
+     <mat-form-field class="centerinput">
         <input type="text" matInput placeholder="Your Requested UID here"  ngModel name="UniqueIdentifierId" required>
-    </mat-form-field>
-    <mat-form-field class="leftinput" >
-        <input type="text" matInput placeholder="Your Requested MessageType here" ngModel name="MessageType" required>
-    </mat-form-field>
-    <mat-form-field class="leftinput">
-        <input type="text" matInput placeholder="Your Requested MessageTime here"  ngModel name="MessageTime" required>
-    </mat-form-field>
-    <mat-form-field class="leftinput">
-        <input type="text" matInput placeholder="Your Requested SenderId here"  ngModel name="SenderId" required>
      </mat-form-field>
-     <mat-form-field class="centerinput">
-        <input type="text" matInput placeholder="Your Requested Code here"  ngModel name="Code" required>
-     </mat-form-field>
-     <mat-form-field class="centerinput">
-        <input type="text" matInput placeholder="Your Requested TOKEN here"  ngModel name="Token" required>
-     </mat-form-field>
-    <button  type="submit" mat-raised-button color="primary" >Submit</button>
+    <button  type="submit" mat-raised-button color="primary">Submit</button>
 </form>
+<br>
+<div *ngIf="error; else elseBlock" class="errors">
+    <p>{{error}}</p>
+</div>
+<ng-template #elseBlock>
+<div *ngIf="location_uid" class="written">
+ Date: {{ location_uid.date }}<br>
+Facility ID: {{ location_uid.id }}<br>
+Country: {{ location_uid.country }}<br>
+Facility Type: {{ location_uid.FacilityType }}
+</div></ng-template>
+
 </section>
 

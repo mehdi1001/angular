@@ -11,11 +11,8 @@
             <mat-error>Password is invalid</mat-error>  
             </mat-form-field>
             
-            <button type="submit" mat-raised-button color="primary">Generate !</button>
-            <mat-form-field>
-              <textarea matInput placeholder="Your Generated Access Token" [value]="onValue()" readonly></textarea>
-            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" >Generate !</button>
+            {{handlers}}
         </form>
-      
       </section>
       
