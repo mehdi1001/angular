@@ -17,3 +17,9 @@ mat-form-field
 textarea{
     grid-gap: 50%;
 }
+.link{
+    color: dark;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}

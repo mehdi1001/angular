@@ -12,6 +12,7 @@ isvalid: any = false;
 jsonparse: any;
 test: any;
 error: string;
+errors: any;
 location_uid : any;
   constructor(http: HttpClient,private QueResponseService: QueResponseService) {
  /*  http.get('http://localhost:2551/que')
@@ -28,13 +29,14 @@ if(localStorage.getItem('Access_token')===null){
    this.error = "Access Token not Generated ! ";
 }else{
    this.QueResponseService.GetLocation(location.UniqueIdentifierId,localStorage.getItem('Access_token')).subscribe(response => {
-  
-   this.location_uid = {date : response[0],id : response[1],country : response[2],FacilityType : response[3]}
+  console.log(response);
+   this.location_uid = {date : response[0],id : response[1],country : response[2],FacilityType : response[3],Address : response[4]}
    
+  },(error) =>{ console.log(error);
+  
   }
-  
-  )}
-  
+  );
 }
 
+}
 }

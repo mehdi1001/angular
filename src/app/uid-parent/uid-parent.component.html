@@ -7,7 +7,7 @@
         <input type="text" matInput placeholder="Enter UID Here" ngModel name="UniqueIdentifierId" required>
         <mat-error>UID invalid</mat-error>
       </mat-form-field>
-  
+     <div *ngIf="error != null;else Block">  <div class="errors" #Block>{{error}}</div> </div>
       <button type="submit" mat-raised-button color="primary">Find</button>
   
       <button type="button" mat-button >Parent: {{this.parent}}</button>

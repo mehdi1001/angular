@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
   action: string = 'Dismiss';
   checker: boolean;
   handlers: string;
-  errors:any;
+  errors:boolean = false;
    tab: any  = {access_token: null,expires_in: null,token_type: null};
   constructor(private QueResponseService: QueResponseService,private _snackBar: MatSnackBar) { }
 
@@ -30,15 +30,14 @@ Generate(credentiels){
   this.jsonparse = JSON.stringify(credentiels);
   this.QueResponseService.getToken(credentiels).subscribe(data => {this.tab = data;
   localStorage.setItem('Access_token',JSON.stringify(data["access_token"]));
+  this.errors = false;
   {this._snackBar.open(this.message, this.action, {
     duration: 8000,
   });}
-  if(JSON.stringify(data["access_token"]) != null)
-  {this.checker = true;}
-  console.log(this.checker);
-  },(error) =>{ this.errors = error["statusText"];
+  },(error) =>{ 
+     this.errors = true;
   console.log("this is the errors"+this.errors);
-  this.handlers ="Access Token Generation Failed.<br> Invalid username or password";
+  this.handlers ="Invalid username or password";
 console.log(" this is a handler"+this.handlers);
 })
 }

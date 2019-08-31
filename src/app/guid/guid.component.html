@@ -1,5 +1,6 @@
 <div class="section">
 <form #obj="ngForm" (ngSubmit)="GetGuid(obj.value)" fxLayout="column" fxLayoutAlign="center center" >
+    <div class="link"><h1 >Guid Generator</h1></div>
     <mat-form-field>
   <input matInput type="text" placeholder="Number of Guids Desired" ngModel name="counter" required>
     </mat-form-field>

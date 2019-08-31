@@ -12,7 +12,7 @@
             </mat-form-field>
             
             <button type="submit" mat-raised-button color="primary" >Generate !</button>
-            {{handlers}}
+            <div *ngIf="errors" class="written">{{handlers}}</div>
         </form>
       </section>
       

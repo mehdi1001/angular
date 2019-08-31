@@ -11,12 +11,17 @@ export class UidParentComponent implements OnInit {
   parent : string;
   res : any;
   length: number;
+  error: string;
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
   }
 
   Search(myForm){
+    if(localStorage.getItem('Access_token')===null){
+ 
+      this.error = "Access Token not Generated ! ";
+   }else{
       myForm.MessageType="10";
       myForm.MessageTime="2019-06-10T14:23:52.960Z";
       myForm.SenderId=8; // Set this to your desired one if the back-end checks this.
@@ -41,5 +46,5 @@ export class UidParentComponent implements OnInit {
          console.log(Response);
       });
 
-    }
+    }}
 }

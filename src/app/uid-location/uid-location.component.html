@@ -2,7 +2,7 @@
 <div class="message" #alreadySubmitted>
     Message here
 </div> -->
-<section class="card" fxLayout="column" fxLayoutAlign="center center"  >
+<section class="card" fxLayout="column" fxLayoutAlign="center center">
         <div class="link"><h1 >UID Location</h1></div>
 <form #location="ngForm" (ngSubmit)="onSubmit(location.value)" fxLayoutGap="50px" #theForm>
    
@@ -20,8 +20,9 @@
 <div *ngIf="location_uid" class="written">
  Date: {{ location_uid.date }}<br>
 Facility ID: {{ location_uid.id }}<br>
-Country: {{ location_uid.country }}<br>
-Facility Type: {{ location_uid.FacilityType }}
+Country: {{ location_uid.country }} <span class="flag-icon flag-icon-{{ location_uid.country | lowercase}}"></span><br>
+Facility Type: {{ location_uid.FacilityType }}<br>
+Facility Address: {{ location_uid.Address }}
 </div></ng-template>
 
 </section>
